@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    *{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+    body{
+            background-color: rgb(214, 213, 213);
+        }
+.slidecontainer {
+  width: 90%;
+  margin: 5%;
+  flex-direction: row;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:focus {
+  opacity: 1;
+   background: #ff4500;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff4500;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff4500;
+  cursor: pointer;
+}
+.slidercontainer{
+    background-color: #fff;
+    padding:5px;
+border-radius: 5px;
+width: 90%;
+margin-left: 5%;
+margin-right: 5%;
+margin-top: 2%;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+margin-bottom: 2%;
+
+  
+}
+
+.rowloaninfo{
+    display: flex;
+    justify-content:space-between;
+margin-bottom: 2%;  
+margin-left:8%;
+margin-right: 8%;
+font-size: larger;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#demo{
+    color: darkgreen;
+    font-size: large;
+    font-weight: 700;
+}
+.loan-term{
+    background-color: #fff;
+    padding: 10px;
+   
+    border-radius: 5px;
+    margin-left: 5%;
+margin-right: 5%;
+margin-top: 4%;
+}
+
+#month{
+    width: 50px;
+    text-align: center;
+    background-color: #e8d9c4;
+    margin:3%;
+}
+
+#month:active{
+
+    background-color: #ffdf00;
+}
+.loaninfo{
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #fff;
+  height:auto;
+
+}
+.withdrawbtn{
+    margin-top:8%;
+margin-left:3%;
+flex: 1;
+
+padding:15px;
+border-radius:50px;
+
+border-width: 0.5;
+background-color: #ffdf00;
+font-size: x-large;
+border: none;
+
+}
+.withdraw{
+    display: flex;
+flex-direction: row;
+}
+header{
+    background-color: #ffdf00;
+    height: 60px;
+    width: 100%;
+    display: flex;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h3 style="align-self: center;margin-left:33.3%;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Loan Details</h3>
+            </header>
+
+<div class="slidercontainer"> 
+<div class="slidecontainer">
+    <p style="margin-left:34%; color: #ff4500; 
+    font-size:30px; font-weight: 600;">5000</p>
+ <div class="row"> 
+ <span>0</span> <span>76000</span>
+</div> 
+ <input type="range" min="5000" max="76000" value="50" class="slider" id="myRange"> 
+ 
+ <p>Amount: <span id="demo"></span></p>
+</div>
+</div>
+
+<div class="loan-term">
+    <div class="row"> 
+        <p>Loan term(month)</p>
+        </div>
+        <div class="row"> 
+
+        
+   <div id="month">
+<p>6</p>
+</div>
+   <div id="month">
+    <p>12</p>
+       </div>
+       <div id="month">
+        <p>18</p>
+           </div>
+           <div id="month">
+            <p>24</p>
+               </div>
+
+
+               <div id="month">
+                <p>36</p>
+                   </div>
+        
+                </div>        
+  </div>
+
+  <div class="loaninfo">
+    <h2>Loan details</h2>
+
+<div class="rowloaninfo">
+    <span>Loan term</span>
+    <span>6</span>
+</div>
+
+<div class="rowloaninfo">
+    <span>Total interest</span>
+    <span>1500.00</span>
+</div>
+<div class="rowloaninfo">
+    <span>Montly repayment</span>
+    <span>8500.00</span>
+</div>
+<div class="rowloaninfo">
+    <span>Montly Principal</span>
+    <span>8300.33</span>
+</div>
+<div class="rowloaninfo">
+    <span>Montly interest</span>
+    <span>247</span>
+</div>
+</div>
+<div class="withdraw">
+    <button class="withdrawbtn">Withdraw</button>
+</div>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+</body>
+</html>
